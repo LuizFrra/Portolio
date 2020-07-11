@@ -25,6 +25,7 @@ const experiences = [
   }
 ];
 
+const tabs= ['Contact', 'Experience', 'About'];
 
 function App() {
 
@@ -38,9 +39,9 @@ function App() {
   return (
     <div className="App">
       <ThemeSetup>
-        <NavBar option={option} selectedOptionChanged={handleNavOption} id="navbar" />
-        <Intro id="intro" />
-        <About id="about" />
+        <NavBar option={option} selectedOptionChanged={handleNavOption} id="navbar" tabsOptions={tabs} />
+        <Intro id="about" />
+        <About />
         <Experience experiences={experiences} skills={SkillsLogo} id="experience" />
         <Form id="contact" />
       </ThemeSetup>

@@ -5,6 +5,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 import Me from '../imgs/Me.png';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
+import GitHubIcon from '@material-ui/icons/GitHub';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -55,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
     borderWidth: 1,
     marginTop: 32
   },
-  plusIcon: {
+  gitHubIcon: {
     fontSize: 40,
     marginTop: 16
   }
@@ -65,6 +66,11 @@ export default function Intro(props) {
   const classes = useStyles();
   var alignItems = 'stretch';
   var direction = 'row';
+
+
+  function gitHubButton() {
+    window.open('https://github.com/LuizFrra');
+  }
 
   const matches = useMediaQuery('(max-width:960px)');
 
@@ -87,8 +93,8 @@ export default function Intro(props) {
             <div className={classes.line}></div>
           </Grid>
           <Grid container justify="center">
-            <Button color="secondary">
-              <AddCircleIcon className={classes.plusIcon} />
+            <Button color="secondary" onClick={gitHubButton}>
+              <GitHubIcon className={classes.gitHubIcon} />
             </Button>
           </Grid>
         </Grid>

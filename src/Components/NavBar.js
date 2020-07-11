@@ -7,6 +7,7 @@ import logo from '../imgs/Logo.svg';
 import MyTab from './Tabs';
 import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';
+import Menu from '@material-ui/core/Menu';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,10 +19,23 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
+  paper: {
+    background: '#272727'
+  }
 }));
 
-export default function NavBar({option, selectedOptionChanged, id}) {
+export default function NavBar({option, selectedOptionChanged, id, tabsOptions}) {
   const classes = useStyles();
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  function handleClose() {
+    setAnchorEl(null);
+  }
+
+  function handleClick(event) {
+    setAnchorEl(event.currentTarget);
+  }
+
   return (
     <div className={classes.root} id={id}>
       <AppBar  elevation={4}>
@@ -30,12 +44,22 @@ export default function NavBar({option, selectedOptionChanged, id}) {
             <img src={logo} alt="LuizFrra"/>
             <div className={classes.root}></div>
             <Hidden smDown>
-              <MyTab selectedOption={option} selectedOptionChanged={selectedOptionChanged} tabsOptions={['Contact', 'Experience', 'About']} />
+              <MyTab selectedOption={option} selectedOptionChanged={selectedOptionChanged} tabsOptions={tabsOptions} />
             </Hidden>
             <Hidden mdUp implementation='css'>
-              <IconButton color='secondary'>
+              <IconButton color='secondary' onClick={handleClick}>
                 <MenuIcon />
               </IconButton>
+              <Menu
+                classes={{ paper: classes.paper}}
+                id="simple-menu"
+                anchorEl={anchorEl}
+                keepMounted
+                open={Boolean(anchorEl)}
+                onClose={handleClose}
+              >
+                <MyTab orientation={'vertical'} selectedOption={option} selectedOptionChanged={selectedOptionChanged} tabsOptions={tabsOptions} />
+              </Menu>
             </Hidden>
           </Toolbar>
         </Container>
