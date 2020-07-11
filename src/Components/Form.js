@@ -64,6 +64,7 @@ export default function Form() {
   return (
     <div className={classes.formDiv}>
       <form name="contact" method="POST" data-netlify="true">
+        <input type="hidden" name="contact" value="contact" />
         <Container>
           <Grid container direction="column" alignItems="center">
             <div className={classes.contact}>Contact</div>
