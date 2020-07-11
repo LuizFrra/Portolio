@@ -23,9 +23,7 @@ const MyTab = ({orientation = 'horizontal', tabsOptions, selectedOption, selecte
 
   const tabs = tabsOptions.map((e, i) => {
     return (
-      <Link to={e.toLowerCase()} key={e} duration={500} smooth={true} spy={true}>
-        <Tab className={classes.root} key={e} value={i} label={e} />
-      </Link>
+      <Tab component={Link} to={e.toLowerCase()} duration={500} smooth={true} spy={true} className={classes.root} key={e} value={i} label={e} />
     );
   })
   

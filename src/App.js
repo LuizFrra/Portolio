@@ -32,6 +32,7 @@ function App() {
 
   function handleNavOption(value) {
     setOption(value);
+    console.log(value);
   }
 
   return (
