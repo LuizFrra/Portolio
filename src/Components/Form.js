@@ -64,7 +64,7 @@ export default function Form() {
   return (
     <div className={classes.formDiv}>
       <form name="contact" method="POST">
-        <input type="hidden" name="contact" value="contact" />
+        <input type="hidden" name="form-name" value="contact" />
         <Container>
           <Grid container direction="column" alignItems="center">
             <div className={classes.contact}>Contact</div>
