@@ -58,11 +58,11 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function Form() {
+export default function Form({id}) {
   const classes = useStyles();
 
   return (
-    <div className={classes.formDiv}>
+    <div className={classes.formDiv} id={id}>
       <form name="contact" method="POST">
         <input type="hidden" name="form-name" value="contact" />
         <Container>

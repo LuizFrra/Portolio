@@ -1,6 +1,7 @@
 import React from 'react';
 import { Tabs, Tab } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-scroll';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,7 +22,11 @@ const MyTab = ({orientation = 'horizontal', tabsOptions, selectedOption, selecte
   const classes = useStyles();
 
   const tabs = tabsOptions.map((e, i) => {
-    return <Tab className={classes.root} key={e} value={i} label={e} />
+    return (
+      <Link to={e.toLowerCase()} key={e} duration={500} smooth={true} spy={true}>
+        <Tab className={classes.root} key={e} value={i} label={e} />
+      </Link>
+    );
   })
   
   return (

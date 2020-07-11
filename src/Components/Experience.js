@@ -98,7 +98,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function Experience({experiences, skills}) {
+export default function Experience({experiences, skills, id}) {
 
   const classes = useStyles();
 
@@ -138,7 +138,7 @@ export default function Experience({experiences, skills}) {
   }
 
   return (
-    <div className={classes.experienceDiv}>
+    <div className={classes.experienceDiv} id={id}>
       <Container>
         <Grid container direction="column" alignItems="center" justify="center">
           <div className={classes.experience}>Experience</div>

@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function About() {
+export default function About({id}) {
   const classes = useStyles();
   const matches = useMediaQuery('(max-width:960px)');
   var alignItems = 'stretch';
@@ -61,7 +61,7 @@ export default function About() {
     direction = 'column-reverse';
   }
   return (
-    <div className={classes.divAbout}>
+    <div className={classes.divAbout} id={id}>
       <Container>
         <Grid container direction="column" alignItems="center" justify="center">
           <div className={classes.about}>About</div>

@@ -74,7 +74,7 @@ export default function Intro(props) {
   }
 
   return (
-    <div className={classes.divIntro}>
+    <div className={classes.divIntro} id={props.id}>
       <Grid className={classes.gridRoot} container direction={direction} alignItems={alignItems} justify="center">
         <Grid item>
           <img className={classes.myImage} src={Me} alt="Me"/>

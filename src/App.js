@@ -37,11 +37,11 @@ function App() {
   return (
     <div className="App">
       <ThemeSetup>
-        <NavBar option={option} selectedOptionChanged={handleNavOption} />
-        <Intro />
-        <About />
-        <Experience experiences={experiences} skills={SkillsLogo} />
-        <Form />
+        <NavBar option={option} selectedOptionChanged={handleNavOption} id="navbar" />
+        <Intro id="intro" />
+        <About id="about" />
+        <Experience experiences={experiences} skills={SkillsLogo} id="experience" />
+        <Form id="contact" />
       </ThemeSetup>
     </div>
   );

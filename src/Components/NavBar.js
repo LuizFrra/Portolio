@@ -20,11 +20,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function NavBar({option, selectedOptionChanged}) {
+export default function NavBar({option, selectedOptionChanged, id}) {
   const classes = useStyles();
   return (
-    <div className={classes.root}>
-      <AppBar position="static" elevation={4}>
+    <div className={classes.root} id={id}>
+      <AppBar  elevation={4}>
         <Container>
           <Toolbar>
             <img src={logo} alt="LuizFrra"/>
