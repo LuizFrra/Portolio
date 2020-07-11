@@ -4,7 +4,6 @@ import { Grid, Button } from '@material-ui/core';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 import Me from '../imgs/Me.png';
-import AddCircleIcon from '@material-ui/icons/AddCircle';
 import GitHubIcon from '@material-ui/icons/GitHub';
 
 
@@ -69,7 +68,7 @@ export default function Intro(props) {
 
 
   function gitHubButton() {
-    window.open('https://github.com/LuizFrra');
+    window.open(props.gitLink);
   }
 
   const matches = useMediaQuery('(max-width:960px)');
@@ -87,7 +86,7 @@ export default function Intro(props) {
         </Grid>
         <Grid item className={classes.gridTexts}>
           <div className={classes.hiThere}>Hi There, My name is</div>
-          <div className={classes.name}>Luiz Ferreira</div>
+          <div className={classes.name}>{props.name}</div>
           <div className={classes.iCan}>I can developt a sistem for your business, increasing your productivity.</div>
           <Grid container justify="center">
             <div className={classes.line}></div>

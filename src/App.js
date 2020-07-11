@@ -25,7 +25,9 @@ const experiences = [
   }
 ];
 
-const tabs= ['Contact', 'Experience', 'About'];
+const tabs = ['Contact', 'Experience', 'About'];
+
+const labelsName = ['Name', 'Email', 'Message'];
 
 function App() {
 
@@ -40,10 +42,10 @@ function App() {
     <div className="App">
       <ThemeSetup>
         <NavBar option={option} selectedOptionChanged={handleNavOption} id="navbar" tabsOptions={tabs} />
-        <Intro id="about" />
+        <Intro id="about" name={'Luiz Ferreira'} gitLink={'https://github.com/LuizFrra'} />
         <About />
         <Experience experiences={experiences} skills={SkillsLogo} id="experience" />
-        <Form id="contact" />
+        <Form id="contact" labelsName={labelsName} />
       </ThemeSetup>
     </div>
   );

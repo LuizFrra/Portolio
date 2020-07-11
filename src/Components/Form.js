@@ -58,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function Form({id}) {
+export default function Form({id, labelsName}) {
   const classes = useStyles();
 
   return (
@@ -78,7 +78,7 @@ export default function Form({id}) {
                     className: classes.textFieldInput
                   }}
                   className={classes.textField}
-                  label="Nome"
+                  label={labelsName[0]}
                   name="nome"
                   fullWidth
                   required
@@ -97,7 +97,7 @@ export default function Form({id}) {
                     className: classes.textFieldInput
                   }}
                   className={classes.textField}
-                  label="Email"
+                  label={labelsName[1]}
                   name="email"
                   fullWidth
                   required
@@ -120,7 +120,7 @@ export default function Form({id}) {
                     className: classes.textFieldInput
                   }}
                   className={classes.message}
-                  label="Message"
+                  label={labelsName[2]}
                   name="message"
                   fullWidth
                   required
