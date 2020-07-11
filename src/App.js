@@ -1,24 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import NavBar from './Components/NavBar';
+import ThemeSetup from './Components/ThemeSetup';
+import Intro from './Components/Intro';
+import About from './Components/About';
+import Experience from './Components/Experience';
+import Synchro from './imgs/Synchro.png';
+import Ufpb from './imgs/ufpb.png';
+import SkillsLogo from './Components/SkillsLogo';
+import Form from './Components/Form';
+
+const experiences = [
+  {
+    dateWork: '2020/Feb - Currently',
+    enterpriseAndJob: 'Synchro Solução Fiscal - Intern',
+    logo: Synchro,
+    current: true
+  },
+  {
+    dateWork: '2019/Feb - 2019/Sep',
+    enterpriseAndJob: 'UFPB - Monitor Of Database Discipline',
+    logo: Ufpb,
+    current: false
+  }
+];
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ThemeSetup>
+        <NavBar />
+        <Intro />
+        <About />
+        <Experience experiences={experiences} skills={SkillsLogo} />
+        <Form />
+      </ThemeSetup>
     </div>
   );
 }
