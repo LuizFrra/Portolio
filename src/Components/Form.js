@@ -63,84 +63,90 @@ export default function Form() {
 
   return (
     <div className={classes.formDiv}>
-      <Container>
-        <Grid container direction="column" alignItems="center">
-          <div className={classes.contact}>Contact</div>
-          <div className={classes.line}></div>
-        </Grid>
-        <Grid className={classes.formInputs} container direction="column">
-          <Grid item container direction="row" justify="space-around">
-            <Grid item md={5} sm={8} xs={12}>
-              <TextField
-                InputProps={{
-                  className: classes.textFieldInput
-                }}
-                className={classes.textField}
-                label="Nome"
-                fullWidth
-                required
-                InputLabelProps={{
-                  shrink: true,
-                  style: {
-                    color: 'white'
-                  }
-                }}
-                variant="outlined"
-              />
+      <form name="contact" method="POST" data-netlify="true">
+        <Container>
+          <Grid container direction="column" alignItems="center">
+            <div className={classes.contact}>Contact</div>
+            <div className={classes.line}></div>
+          </Grid>
+          <Grid className={classes.formInputs} container direction="column">
+            <Grid item container direction="row" justify="space-around">
+              <Grid item md={5} sm={8} xs={12}>
+                <TextField
+                  InputProps={{
+                    className: classes.textFieldInput
+                  }}
+                  className={classes.textField}
+                  label="Nome"
+                  name="nome"
+                  fullWidth
+                  required
+                  InputLabelProps={{
+                    shrink: true,
+                    style: {
+                      color: 'white'
+                    }
+                  }}
+                  variant="outlined"
+                />
+              </Grid>
+              <Grid item md={5} sm={8} xs={12}>
+                <TextField
+                  InputProps={{
+                    className: classes.textFieldInput
+                  }}
+                  className={classes.textField}
+                  label="Email"
+                  name="email"
+                  fullWidth
+                  required
+                  InputLabelProps={{
+                    shrink: true,
+                    style: {
+                      color: 'white'
+                    }
+                  }}
+                  variant="outlined"
+                />
+              </Grid>
             </Grid>
-            <Grid item md={5} sm={8} xs={12}>
-              <TextField
-                InputProps={{
-                  className: classes.textFieldInput
-                }}
-                className={classes.textField}
-                label="Email"
-                fullWidth
-                required
-                InputLabelProps={{
-                  shrink: true,
-                  style: {
-                    color: 'white'
-                  }
-                }}
-                variant="outlined"
-              />
+            <Grid item container justify="space-around">
+              <Grid item sm={8} md={11} xs={12}>
+                <TextField
+                  rows={4}
+                  multiline
+                  InputProps={{
+                    className: classes.textFieldInput
+                  }}
+                  className={classes.message}
+                  label="Message"
+                  name="message"
+                  fullWidth
+                  required
+                  InputLabelProps={{
+                    shrink: true,
+                    style: {
+                      color: 'white'
+                    }
+                  }}
+                  variant="outlined"
+                />
+              </Grid>
+            </Grid>
+            <Grid item container direction="row" justify="flex-end" alignItems="flex-end">
+              <Button
+                type="submit"
+                className={classes.button}
+                variant="contained"
+                color="primary"
+                endIcon={<Icon>send</Icon>}
+              >
+                Send
+              </Button>
             </Grid>
           </Grid>
-          <Grid item container justify="space-around">
-            <Grid item sm={8} md={11} xs={12}>
-              <TextField
-                rows={4}
-                multiline
-                InputProps={{
-                  className: classes.textFieldInput
-                }}
-                className={classes.message}
-                label="Message"
-                fullWidth
-                required
-                InputLabelProps={{
-                  shrink: true,
-                  style: {
-                    color: 'white'
-                  }
-                }}
-                variant="outlined"
-              />
-            </Grid>
-          </Grid>
-          <Grid item container direction="row" justify="flex-end" alignItems="flex-end">
-            <Button
-              className={classes.button}
-              variant="contained"
-              color="primary"
-              endIcon={<Icon>send</Icon>}
-            >
-              Send
-            </Button>
-          </Grid>
-        </Grid>
-      </Container>
+        </Container>
+      </form>
     </div>
   )
 }
