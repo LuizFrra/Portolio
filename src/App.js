@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import NavBar from './Components/NavBar';
 import ThemeSetup from './Components/ThemeSetup';
@@ -27,10 +27,17 @@ const experiences = [
 
 
 function App() {
+
+  const [ option, setOption ] = useState(2);
+
+  function handleNavOption(value) {
+    setOption(value);
+  }
+
   return (
     <div className="App">
       <ThemeSetup>
-        <NavBar />
+        <NavBar option={option} selectedOptionChanged={handleNavOption} />
         <Intro />
         <About />
         <Experience experiences={experiences} skills={SkillsLogo} />

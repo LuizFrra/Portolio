@@ -131,7 +131,7 @@ export default function Experience({experiences, skills}) {
 
   for(var skill in skills) {
     skillsRendered.push(
-      <Grid className={classes.skill} container item sm={12} md={2} justify="center">
+      <Grid className={classes.skill} key={skill} container item sm={12} md={2} justify="center">
         <img src={skills[skill]} alt="skill" />
       </Grid>
     );

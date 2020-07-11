@@ -12,7 +12,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const MyTab = ({orientation = 'horizontal', tabsOptions}) => {
+const MyTab = ({orientation = 'horizontal', tabsOptions, selectedOption, selectedOptionChanged}) => {
+
+  function handleTabsChange(event, value) {
+    selectedOptionChanged(value); 
+  }
   
   const classes = useStyles();
 
@@ -21,7 +25,7 @@ const MyTab = ({orientation = 'horizontal', tabsOptions}) => {
   })
   
   return (
-    <Tabs indicatorColor='secondary' orientation={orientation} value={2}>
+    <Tabs indicatorColor='secondary' orientation={orientation} value={selectedOption} onChange={(event, value) => handleTabsChange(event, value)}>
       {tabs}
     </Tabs>
   )

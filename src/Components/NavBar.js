@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function NavBar() {
+export default function NavBar({option, selectedOptionChanged}) {
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -30,7 +30,7 @@ export default function NavBar() {
             <img src={logo} alt="LuizFrra"/>
             <div className={classes.root}></div>
             <Hidden smDown>
-              <MyTab tabsOptions={['Contact', 'Experience', 'About']} />
+              <MyTab selectedOption={option} selectedOptionChanged={selectedOptionChanged} tabsOptions={['Contact', 'Experience', 'About']} />
             </Hidden>
             <Hidden mdUp implementation='css'>
               <IconButton color='secondary'>
