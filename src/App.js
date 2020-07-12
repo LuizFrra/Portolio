@@ -42,7 +42,7 @@ function App() {
     <div className="App">
       <ThemeSetup>
         <NavBar option={option} selectedOptionChanged={handleNavOption} id="navbar" tabsOptions={tabs} />
-        <Intro id="about" name={'Luiz Ferreira'} gitLink={'https://github.com/LuizFrra'} />
+        <Intro id="about" name={'Luiz Ferreira'} gitLink={'https://github.com/LuizFrra'} linkedin={'https://www.linkedin.com/in/luiz-ferreira-34212015b/'}/>
         <About />
         <Experience experiences={experiences} skills={SkillsLogo} id="experience" />
         <Form id="contact" labelsName={labelsName} />

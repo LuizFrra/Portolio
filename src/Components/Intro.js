@@ -2,9 +2,10 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Button } from '@material-ui/core';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 import Me from '../imgs/Me.png';
-import GitHubIcon from '@material-ui/icons/GitHub';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -55,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
     borderWidth: 1,
     marginTop: 32
   },
-  gitHubIcon: {
+  icon: {
     fontSize: 40,
     marginTop: 16
   }
@@ -69,6 +70,10 @@ export default function Intro(props) {
 
   function gitHubButton() {
     window.open(props.gitLink);
+  }
+
+  function linkedInButton() {
+    window.open(props.linkedin);
   }
 
   const matches = useMediaQuery('(max-width:960px)');
@@ -93,7 +98,10 @@ export default function Intro(props) {
           </Grid>
           <Grid container justify="center">
             <Button color="secondary" onClick={gitHubButton}>
-              <GitHubIcon className={classes.gitHubIcon} />
+              <GitHubIcon className={classes.icon} />
+            </Button>
+            <Button color="secondary" onClick={linkedInButton}>
+              <LinkedInIcon className={classes.icon} />
             </Button>
           </Grid>
         </Grid>
