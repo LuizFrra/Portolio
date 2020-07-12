@@ -63,28 +63,57 @@ const useStyles = makeStyles((theme) => ({
   },
   canvas: {
     position: 'absolute',
-    height: "100vh",
-    width: "95vw"
+    height: "100%",
+    width: "100%"
   }
 }));  
 
 const partcilesParams = {
-  "particles": {
-      "number": {
-          "value": 20
-      },
-      "size": {
-          "value": 3
+  particles: {
+    number: {
+      value: 60,
+        density: {
+          enable: true,
+          value_area: 1500
+        }
+    },
+    line_linked: {
+      enable: true,
+      opacity: 0.02
+    },
+    move: {
+      direction: "right",
+      speed: 0.05
+    },
+    size: {
+      value: 1
+    },
+    opacity: {
+      anim: {
+        enable: true,
+        speed: 1,
+        opacity_min: 0.05
       }
+    }
   },
-  "interactivity": {
-      "events": {
-          "onhover": {
-              "enable": true,
-              "mode": "repulse"
-          }
+  interactivity: {
+    events: {
+      onresize: {
+        enable: true,
+        density_auto: true
+      },
+      onclick: {
+        enable: true,
+        mode: "push"
       }
-  }
+    },
+    modes: {
+      push: {
+        particles_nb: 1
+      }
+    }
+  },
+  retina_detect: true
 }
 
 export default function Intro(props) {
