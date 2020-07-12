@@ -6,6 +6,7 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 import Me from '../imgs/Me.png';
+import { Particles } from 'react-particles-js';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -59,8 +60,32 @@ const useStyles = makeStyles((theme) => ({
   icon: {
     fontSize: 40,
     marginTop: 16
+  },
+  canvas: {
+    position: 'absolute',
+    height: "100vh",
+    width: "95vw"
   }
 }));  
+
+const partcilesParams = {
+  "particles": {
+      "number": {
+          "value": 20
+      },
+      "size": {
+          "value": 3
+      }
+  },
+  "interactivity": {
+      "events": {
+          "onhover": {
+              "enable": true,
+              "mode": "repulse"
+          }
+      }
+  }
+}
 
 export default function Intro(props) {
   const classes = useStyles();
@@ -85,6 +110,7 @@ export default function Intro(props) {
 
   return (
     <div className={classes.divIntro} id={props.id}>
+      <Particles className={classes.canvas} params={partcilesParams} />
       <Grid className={classes.gridRoot} container direction={direction} alignItems={alignItems} justify="center">
         <Grid item>
           <img className={classes.myImage} src={Me} alt="Me"/>
