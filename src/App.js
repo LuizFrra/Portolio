@@ -5,8 +5,6 @@ import ThemeSetup from './Components/ThemeSetup';
 import Intro from './Components/Intro';
 import About from './Components/About';
 import Experience from './Components/Experience';
-import Synchro from './imgs/Synchro.png';
-import Ufpb from './imgs/ufpb.png';
 import SkillsLogo from './Components/SkillsLogo';
 import Form from './Components/Form';
 
@@ -14,13 +12,17 @@ const experiences = [
   {
     dateWork: '2020/Feb - Currently',
     enterpriseAndJob: 'Synchro Solução Fiscal - Intern',
-    logo: Synchro,
+    logoWebp: require('./imgs/Synchro/Synchro.webp'),
+    logoJp2: require('./imgs/Synchro/Synchro.jp2'),
+    logoPng: require('./imgs/Synchro/Synchro.png'),
     current: true
   },
   {
     dateWork: '2019/Feb - 2019/Sep',
     enterpriseAndJob: 'UFPB - Monitor Of Database Discipline',
-    logo: Ufpb,
+    logoWebp: require('./imgs/ufpb/ufpb.webp'),
+    logoJp2: require('./imgs/ufpb/ufpb.jp2'),
+    logoPng: require('./imgs/ufpb/ufpb.png'),
     current: false
   }
 ];

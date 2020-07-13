@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Container, Grid } from '@material-ui/core';
-import Star from '../imgs/Star.png';
 
 const useStyles = makeStyles((theme) => ({
   experienceDiv: {
@@ -107,7 +106,11 @@ export default function Experience({experiences, skills, id}) {
       <Grid className={classes.timeline} key={index}>
         <div id="title">
           <div className={classes.starIcon}>
-            <img src={Star} alt="Current job" />
+            <picture >
+                <source srcset={require('../imgs/Star/Star.png')} type="image/webp"/>
+                <source srcset={require('../imgs/Star/Star.png')} type="image/jp2"/>
+                <img src={'../imgs/Star/Star.png'} alt="Current job" />
+              </picture>
           </div>
           <div className={classes.timelineDate}>
             {value.dateWork}
@@ -119,7 +122,11 @@ export default function Experience({experiences, skills, id}) {
             <div className={classes.TimelineTextAbout}>
               <div className={classes.enterpriseName}>- {value.enterpriseAndJob}</div>
               <Grid container justify="center" className={classes.enterpriseLogo}>
-                <img src={value.logo} alt="Synchro Logo" />
+                <picture>
+                  <source srcset={value.logoWebp} type="image/webp"/>
+                  <source srcset={value.logoJp2} type="image/jp2"/>
+                  <img srcset={value.logoPng} alt={value.enterpriseAndJob} />
+                </picture>
               </Grid>
             </div>
           </div>

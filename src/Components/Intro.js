@@ -4,10 +4,7 @@ import { Grid, Button } from '@material-ui/core';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
-
-import Me from '../imgs/Me.png';
 import { Particles } from 'react-particles-js';
-
 
 const useStyles = makeStyles((theme) => ({
   divIntro: {
@@ -142,7 +139,11 @@ export default function Intro(props) {
       <Particles className={classes.canvas} params={partcilesParams} />
       <Grid className={classes.gridRoot} container direction={direction} alignItems={alignItems} justify="center">
         <Grid item>
-          <img className={classes.myImage} src={Me} alt="Me"/>
+          <picture>
+            <source className={classes.myImage} srcset={require('../imgs/Me/Me.webp')} type="image/webp"/>
+            <source className={classes.myImage} srcset={require('../imgs/Me/Me.jp2')} type="image/jp2"/>
+            <img className={classes.myImage} srcset={require('../imgs/Me/Me.png')} alt="Me" />
+          </picture>
         </Grid>
         <Grid item className={classes.gridTexts}>
           <div className={classes.hiThere}>Hi There, My name is</div>

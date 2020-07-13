@@ -1,7 +1,6 @@
 import React from 'react';
 import { Grid, Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import aboutImage from '../imgs/aboutImage.png';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 const useStyles = makeStyles((theme) => ({
@@ -81,7 +80,11 @@ export default function About({id}) {
               </div>
             </Grid>
             <Grid>
-              <img className={classes.aboutImage} src={aboutImage} alt="About"/>
+              <picture >
+                <source className={classes.aboutImage} srcset={require('../imgs/aboutImage/aboutImage.webp')} type="image/webp"/>
+                <source className={classes.aboutImage} srcset={require('../imgs/aboutImage/aboutImage.jp2')} type="image/jp2"/>
+                <img className={classes.aboutImage} src={require('../imgs/aboutImage/aboutImage.png')}  alt="About"/>
+              </picture>
             </Grid>
           </Grid>
         </div>
